@@ -33,7 +33,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography className={styles.infectedTitle} gutterBottom>
               Infected
             </Typography>
-            <Typography variant='h5'>
+            <Typography variant='h5' className={styles.h5}>
               <CountUp
                 start={0}
                 end={confirmed.value}
@@ -41,7 +41,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 separator=','
               />
             </Typography>
-            <Typography variant='body2'>Active cases</Typography>
+            <Typography variant='body2' className={styles.countText}>
+              Active cases
+            </Typography>
             <Typography className={styles.dates}>
               {new Date(lastUpdate).toDateString()}
             </Typography>
@@ -61,7 +63,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography className={styles.recoveredTitle} gutterBottom>
               Recovered
             </Typography>
-            <Typography variant='h5'>
+            <Typography variant='h5' className={styles.h5}>
               <CountUp
                 start={0}
                 end={recovered.value}
@@ -69,7 +71,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 separator=','
               />
             </Typography>
-            <Typography variant='body2'>Recovered cases</Typography>
+            <Typography variant='body2' className={styles.countText}>
+              Recovered cases
+            </Typography>
             <Typography className={styles.dates}>
               {new Date(lastUpdate).toDateString()}
             </Typography>
@@ -89,7 +93,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
             <Typography className={styles.deathsTitle} gutterBottom>
               Deaths
             </Typography>
-            <Typography variant='h5'>
+            <Typography variant='h5' className={styles.h5}>
               <CountUp
                 start={0}
                 end={deaths.value}
@@ -97,7 +101,9 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 separator=','
               />
             </Typography>
-            <Typography variant='body2'>Deseased cases</Typography>
+            <Typography variant='body2' className={styles.countText}>
+              Deseased cases
+            </Typography>
             <Typography className={styles.dates}>
               {new Date(lastUpdate).toDateString()}
             </Typography>

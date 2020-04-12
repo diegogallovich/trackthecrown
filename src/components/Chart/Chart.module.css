@@ -1,0 +1,9 @@
+.container {
+  padding: 3rem 6rem 6rem 6rem;
+  display: flex;
+  justify-content: center;
+  width: 85%;
+  box-shadow: 6px, 6px, 10px, -1px rgba(255, 255, 255, 0.15) -6px,
+    -6px 10px -1px rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(0, 0, 0, 0) !important;
+}

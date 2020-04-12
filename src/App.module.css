@@ -1,0 +1,23 @@
+body {
+  background-color: #e3edf7;
+}
+
+i {
+  color: rgba(255, 0, 255, 0.829);
+}
+
+h1 {
+  color: rgba(51, 161, 7, 0.589);
+  letter-spacing: 0.6rem;
+  font-size: 6em;
+  font-family: 'Baloo Bhaina 2', cursive;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

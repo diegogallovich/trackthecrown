@@ -11,6 +11,7 @@ class App extends React.Component {
   // State
   state = {
     data: {},
+    country: '',
   };
   // Component did mount
   async componentDidMount() {
@@ -19,9 +20,16 @@ class App extends React.Component {
     this.setState({ data: FETCHED_DATA });
   }
 
+  handleCountryChange = async (country) => {
+    const FETCHED_DATA = await FETCH_DATA(country);
+    console.log(FETCHED_DATA);
+    // set state
+    this.setState({ data: FETCHED_DATA, country: country });
+  };
+
   render() {
     // Grab data from state to pass as props to components
-    const { data } = this.state;
+    const { data, country } = this.state;
 
     return (
       <div className={styles.container}>
@@ -29,8 +37,8 @@ class App extends React.Component {
           C<i className='fas fa-virus'></i>VID-19
         </h1>
         <Cards data={data} />
-        <CountryPicker className='neocountries' />
-        <Chart className='neochart' />
+        <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <Chart data={data} country={country} />
       </div>
     );
   }

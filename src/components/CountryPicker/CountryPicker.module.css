@@ -1,0 +1,11 @@
+.formControl {
+  box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8) !important;
+  border-radius: 3px !important;
+}
+
+select {
+  padding: 1rem !important ;
+  text-align: center;
+  color: rgba(255, 0, 255, 0.829) !important;
+}

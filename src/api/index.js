@@ -4,11 +4,15 @@ import axios from 'axios';
 const URL = 'https://covid19.mathdro.id/api';
 
 // Get data from api
-export const FETCH_DATA = async () => {
+export const FETCH_DATA = async (country) => {
+  let changeableUrl = URL;
+  if (country && country !== 'global')
+    changeableUrl = `${URL}/countries/${country}`;
+  console.log(changeableUrl);
   try {
     const {
       data: { confirmed, recovered, deaths, lastUpdate },
-    } = await axios.get(URL);
+    } = await axios.get(changeableUrl);
 
     return {
       confirmed,
@@ -17,14 +21,15 @@ export const FETCH_DATA = async () => {
       lastUpdate,
     };
     //
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // Get daily data for chartjs
 export const FETCH_DAILY_DATA = async () => {
   try {
     const { data } = await axios.get(`${URL}/daily`);
-    console.log(data);
     const MODIFIED_DATA = data.map((dailyData) => ({
       confirmed: dailyData.confirmed.total,
       deaths: dailyData.deaths.total,
@@ -34,7 +39,9 @@ export const FETCH_DAILY_DATA = async () => {
     return MODIFIED_DATA;
 
     //
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // Get data by country
@@ -45,5 +52,7 @@ export const FETCH_COUNTRIES = async () => {
     } = await axios.get(`${URL}/countries`);
     return countries.map((country) => country.name);
     //
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };

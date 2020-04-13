@@ -9,7 +9,6 @@ import styles from './Cards.module.css';
 import cx from 'classnames';
 
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
-  console.log(confirmed);
   // Asert data existence
   if (!confirmed) {
     return 'Loading...';
